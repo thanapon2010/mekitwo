@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./css/style'); %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./css/style'); %>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Login Or Register</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <%- include('tap')%>
+<div class="image-login"></div>
+   
+      <center>
+        <div class="col-sm-6">
+          <div class="overall3">
+            <div class="form">
+              <div class="circle">
+                <center>
+                  <h1>เข้าสู่ระบบ</h1>
+                </center>
+                <form action="" method="POST">
+                  <div class="form-group">
+                    <label for="_email">Email</label>
+                    <input type="text" name="user_email" id="_email" class="form-control" placeholder="Email"
+                      rnodeequired>
+                  </div>
+                  <div class="form-group">
+                    <label for="_pass">Password</label>
+                    <input type="password" name="user_pass" id="_pass" class="form-control" placeholder="Password"
+                      required>
+                  </div>
+                  <% if (locals.login_errors) { login_errors.forEach(function(error_msg){ %>
+                    <div class="alert alert-danger" role="alert">
+                      <%= error_msg %>
+                    </div>
+                    <% }); } %>
+                      <button type="submit" class="btn btn-primary">Login</button>
+
+                </form>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+      </center>
+      <script>
+        fetch('http://mekiman.app.ruk-com.cloud/showusers')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+          }
+          )
+          .catch(error => console.error(error));
+      </script>
+    </div>
+    </div>
+</body>
+
+</html>

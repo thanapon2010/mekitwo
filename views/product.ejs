@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<%- include('./css/style'); %>
+    
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+    <%- include('tap3')%>
+    <div class="container-lgx2" style="padding-top: 40px;min-height:360px;padding-bottom: 50px;">  
+        <form>
+        <table class="table table-fit mt-6">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">image</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">
+                        <a href="addproduct" class="btn btn-success">Add</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < result.length; i++) { %>
+                    <tr>
+                        <td >
+                            <%= i+1 %>
+                        </td>
+                        <td>
+                            <img src="/image/<%= result[i].img %>" width="100">
+                         </td>
+                        <td>
+                            <%= result[i].product %>
+                        </td>
+                        <td >
+                            <%= result[i].stock %>
+                        </td>
+                        
+                        <td>
+                            <form action="editproduct" method="POST" name="producttobuy">
+                                
+                                <input tyle="text" name="idproduct" value="" style="display:none">
+                                <input type="submit" class="btn material-icons text-success" value="Edit">
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-lgx a" style="min-height: 829px;">
+        <div class="image"></div>
+        <form class="user bg-w r" action="/addproducts" method="POST" novalidate style="width: 828px;left:50%;">
+
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Add Product!</h1>
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-check-label">Product Name</label>
+                <input type="text" name="product_name" class="form-control form-control-user"
+                    placeholder="product_name">
+            </div>
+            
+            <div class="form-group mb-3">
+                <label class="form-check-label">Product Stock </label>
+                <input type="text" name="product_stock" class="form-control form-control-user"
+                    placeholder="product_stock">
+            </div>
+           
+            <div class="form-group mb-3">
+                <label class="form-check-label">Product image</label>
+                <input type="file" name="product_image" class="form-control form-control-user"
+                    placeholder="product_image">
+            </div>
+            <hr />
+            <div class="text-center">
+                <input type="submit" class="btn btn-outline-primary mb-3" value="Confirm" style="width:150px;">
+            </div>>
+
+        </form>
+    </div>
+</body>
+</html>

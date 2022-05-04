@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<%- include('./css/style'); %>
+    
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+    <%- include('tap3')%>
+    <div class="container-lgx2" style="padding-top: 40px;min-height:360px;padding-bottom: 50px;">  
+        <form>
+        <table class="table table-fit mt-6">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">student id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                </tr>
+                <tbody>
+                    <% for(var i = 0; i < result.length; i++){ %>
+                    <tr>
+                      <th scope="row"><%=i+1%></th>
+                      <td><%= result[i].name %></td>
+                      <td><%= result[i].user_id %></td>
+                      <td><%= result[i].product %></td>
+                      <td><%= result[i].date %></td>
+                      <td><%= result[i].status %></td>
+                      <td><form action="editstatus" method="POST">
+                                
+                        <input tyle="text" name="id" value="<%= result[i].id %>" style="display:none">
+                        <input type="submit" class="btn material-icons text-success" value="อนุมัติ">
+                    </form>
+                    <form action="deletestatus" method="POST"> >
+                                
+                        <input tyle="text" name="id" value="<%= result[i].id %>" style="display:none">
+                        <input type="submit" class="btn material-icons text-danger" value="ลบ">
+                    </form>
+                    </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+            </thead>
+
+        </table>
+    </form>
+</body>
+</html>
